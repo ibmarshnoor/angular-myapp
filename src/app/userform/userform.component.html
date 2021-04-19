@@ -10,10 +10,11 @@
   <td>DOB</td>
   </thead>
 <tbody>
-  <tr *ngFor='let user1 of userArray'>
-    <td>{{user1.name}}</td>
+  <tr *ngFor='let user1 of userArray; index as i'>
+    <td><a [href]="user1.name">{{user1.name}}</a></td>
     <td>{{user1.age}}</td>
     <td>{{user1.dob}}</td>
+    <td><button (click)='this.deleteUser(user1.id,i)'>X</button></td>
   </tr>
 </tbody>
 </table>
