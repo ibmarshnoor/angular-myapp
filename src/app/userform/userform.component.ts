@@ -16,8 +16,10 @@ export class UserformComponent implements OnInit {  //controller
     const observable=this.userService.delete(id);
     observable.subscribe(response=>this.userArray.splice(index,1));
   }
+  searchByName(){
 
-  save(){
+  }
+   save(){
     const observable = this.userService.save(this.user);
     observable.subscribe(response=> {
       console.log(response);

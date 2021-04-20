@@ -10,10 +10,13 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
   save(user: User) {
-    return this.http.post('http://localhost:8080/user', user, {
+    return this.http.post(URL, user, {
       headers: { "content-type": 'application/json' }
     });
   }
+  // searchByName(name:string){
+  //   return this.http.get(name);
+  // }
   getAllUsers(){
     return this.http.get(URL);
   }
